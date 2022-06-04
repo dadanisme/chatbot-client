@@ -44,7 +44,7 @@ function Chatbot() {
 
   const testConnection = async () => {
     try {
-      const res = await fetch("http://192.168.18.54:5000/chatbot?msg=hello");
+      const res = await fetch("https://192.168.18.54:5000/chatbot?msg=hello");
       const data = await res.json();
       if (data.response) {
         setIsOnline(true);
@@ -53,9 +53,6 @@ function Chatbot() {
       }
     } catch (error) {
       setIsOnline(false);
-      if (chats.length > 2) {
-        setIsOnline(true);
-      }
     }
   };
 
@@ -65,8 +62,11 @@ function Chatbot() {
         <div>
           {/* header section */}
           <h5 className="chat-header pt-1 pb-2">
+            <strong style={{ color: "#fff", position: "relative", top: "2px" }}>
+              chatbot
+            </strong>{" "}
             <Badge bg={isOnline ? "success" : "danger"}>
-              Bot is {isOnline ? "online" : "offline"}
+              {isOnline ? "online" : "offline"}
             </Badge>{" "}
           </h5>
           <div

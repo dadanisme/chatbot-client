@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "boxicons";
-import Chatbot from "./Components/Chatbot";
+import Chatbot from "./Components/Chatbot/Chatbot";
 
 function App() {
   return (
