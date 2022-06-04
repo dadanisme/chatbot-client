@@ -8,10 +8,18 @@ Clone from here [https://github.com/dadanisme/chatbot-server](https://github.com
 
 ## Run the server
 
+This needs pip to be installed on your system. Go [https://pypi.org/](https://pypi.org/) if pypi is not installed. \
+\
 Go to `chatbot-server` directory
 
 ```
 cd chatbot-server
+```
+
+Install required dependencies from `requirements.txt`
+
+```
+pip install -r requirements.txt
 ```
 
 Run the server on localhost
@@ -26,7 +34,7 @@ flask run --cert=adhoc
 
 ## Run the client
 
-this will requires Node.js installed on your system. Install from here [https://nodejs.org/en/](https://nodejs.org/en/)\
+This will requires Node.js installed on your system. Install from here [https://nodejs.org/en/](https://nodejs.org/en/)\
 \
 Go to `chatbot-client` directory
 
@@ -48,4 +56,4 @@ npm start
 
 ## Open the Client (Instant)
 
-Open [https://project-fanisa.web.app](https://project-fanisa.web.app)
+If you don't want to run on development environment, just open the deployed apps at [https://project-fanisa.web.app](https://project-fanisa.web.app)
