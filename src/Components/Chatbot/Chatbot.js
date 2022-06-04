@@ -15,7 +15,7 @@ function Chatbot() {
     e.preventDefault();
     testConnection();
     const msg = input;
-    const res = await fetch("https://192.168.18.54:5000/chatbot?msg=" + msg);
+    const res = await fetch("https://127.0.0.1:5000/chatbot?msg=" + msg);
     const data = await res.json();
     setChats([
       ...chats,
@@ -44,7 +44,7 @@ function Chatbot() {
 
   const testConnection = async () => {
     try {
-      const res = await fetch("https://192.168.18.54:5000/chatbot?msg=hello");
+      const res = await fetch("https://127.0.0.1:5000/chatbot?msg=hello");
       const data = await res.json();
       if (data.response) {
         setIsOnline(true);
