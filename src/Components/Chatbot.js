@@ -15,7 +15,7 @@ function Chatbot() {
     e.preventDefault();
     testConnection();
     const msg = input;
-    const res = await fetch("http://192.168.18.54:5000/chatbot?msg=" + msg);
+    const res = await fetch("https://192.168.18.54:5000/chatbot?msg=" + msg);
     const data = await res.json();
     setChats([
       ...chats,
@@ -53,6 +53,9 @@ function Chatbot() {
       }
     } catch (error) {
       setIsOnline(false);
+      if (chats.length > 2) {
+        setIsOnline(true);
+      }
     }
   };
 
