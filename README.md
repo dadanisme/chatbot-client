@@ -6,7 +6,7 @@ Clone from here [https://github.com/dadanisme/chatbot-server](https://github.com
 
     git clone https://github.com/dadanisme/chatbot-server.git
 
-## Run the server
+### Run the server
 
 This needs pip to be installed on your system. Go [https://pypi.org/](https://pypi.org/) if pypi is not installed. \
 \
@@ -28,7 +28,7 @@ Run the server on localhost
 flask run --cert=adhoc
 ```
 
-## Connect to the server
+### Connect to the server
 
 Go to [https://127.0.0.1:5000/](https://127.0.0.1:5000/) then Advance to open Unsecure Server.\
 Don't worry, this is totally safe.
@@ -37,7 +37,7 @@ Don't worry, this is totally safe.
 
     git clone https://github.com/dadanisme/chatbot-client.git
 
-## Run the client
+### Run the client
 
 This will requires Node.js installed on your system. Install from here [https://nodejs.org/en/](https://nodejs.org/en/)\
 \
@@ -59,6 +59,6 @@ Run the client
 npm start
 ```
 
-## Open the Client (Instant)
+### Open the Client (Instant)
 
 If you don't want to run on development environment, just open the deployed apps at [https://project-fanisa.web.app](https://project-fanisa.web.app)
