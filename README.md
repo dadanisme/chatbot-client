@@ -28,6 +28,11 @@ Run the server on localhost
 flask run --cert=adhoc
 ```
 
+## Connect to the server
+
+Go to [https://127.0.0.1:5000/](https://127.0.0.1:5000/) then Advance to open Unsecure Server./
+Don't worry, this is totally safe.
+
 ## Clone this repository
 
     git clone https://github.com/dadanisme/chatbot-client.git
