@@ -14,8 +14,11 @@ function Chatbot() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     testConnection();
+    setLoading(true);
     const msg = input;
-    const res = await fetch("https://127.0.0.1:5000/chatbot?msg=" + msg);
+    const res = await fetch(
+      "https://chatbot-server-ayang.herokuapp.com/chatbot?msg=" + msg
+    );
     const data = await res.json();
     setChats([
       ...chats,
@@ -44,7 +47,9 @@ function Chatbot() {
 
   const testConnection = async () => {
     try {
-      const res = await fetch("https://127.0.0.1:5000/chatbot?msg=hello");
+      const res = await fetch(
+        "https://chatbot-server-ayang.herokuapp.com/chatbot?msg=hello"
+      );
       const data = await res.json();
       if (data.response) {
         setIsOnline(true);
@@ -65,8 +70,17 @@ function Chatbot() {
             <strong style={{ color: "#fff", position: "relative", top: "2px" }}>
               chatbot
             </strong>{" "}
-            <Badge bg={isOnline ? "success" : "danger"}>
-              {isOnline ? "online" : "offline"}
+            <Badge
+              className="chatbot-status"
+              bg={
+                isOnline === false ? "danger" : loading ? "warning" : "success"
+              }
+            >
+              {isOnline === false
+                ? "offline"
+                : loading
+                ? "typing..."
+                : "online"}
             </Badge>{" "}
           </h5>
           <div
@@ -103,14 +117,6 @@ function Chatbot() {
               </Button>
             </InputGroup>
           </form>
-        </div>
-        <div
-          className="bot-typing"
-          style={{
-            display: loading ? "unset" : "none",
-          }}
-        >
-          Bot is typing...
         </div>
       </div>
     );
