@@ -10,15 +10,15 @@ function Chatbot() {
   const [show, setShow] = useState(true);
   const [isOnline, setIsOnline] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const [serverAddress] = useState(
+    "https://chatbot-server-ayang.herokuapp.com/"
+  );
   const handleSubmit = async (e) => {
     e.preventDefault();
     testConnection();
     setLoading(true);
     const msg = input;
-    const res = await fetch(
-      "https://chatbot-server-ayang.herokuapp.com/chatbot?msg=" + msg
-    );
+    const res = await fetch(serverAddress + "chatbot?msg=" + msg);
     const data = await res.json();
     setChats([
       ...chats,
@@ -47,9 +47,7 @@ function Chatbot() {
 
   const testConnection = async () => {
     try {
-      const res = await fetch(
-        "https://chatbot-server-ayang.herokuapp.com/chatbot?msg=hello"
-      );
+      const res = await fetch(serverAddress + "chatbot?msg=test");
       const data = await res.json();
       if (data.response) {
         setIsOnline(true);

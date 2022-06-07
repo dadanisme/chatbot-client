@@ -1,39 +1,13 @@
-# How to run Chatbot
+# How to run Chatbot Client
 
-## Clone the server repository
+This will also need to the `server` to run. Here is the repository for server [https://github.com/dadanisme/chatbot-server](https://github.com/dadanisme/chatbot-server). \
+Just ignore this if you have already running server.
 
-Clone from here [https://github.com/dadanisme/chatbot-server](https://github.com/dadanisme/chatbot-server), or Simply
+## Run on localhost
 
-    git clone https://github.com/dadanisme/chatbot-server.git
+This will run server on your localhost using `Flask`
 
-### Run the server
-
-This needs pip to be installed on your system. Go [https://pypi.org/](https://pypi.org/) if pypi is not installed. \
-\
-Go to `chatbot-server` directory
-
-```
-cd chatbot-server
-```
-
-Install required dependencies from `requirements.txt`
-
-```
-pip install -r requirements.txt
-```
-
-Run the server on localhost
-
-```
-flask run --cert=adhoc
-```
-
-### Connect to the server
-
-Go to [https://127.0.0.1:5000/](https://127.0.0.1:5000/) then Advance to open Unsecure Server.\
-Don't worry, this is totally safe.
-
-## Clone this repository
+### Clone this repository
 
     git clone https://github.com/dadanisme/chatbot-client.git
 
@@ -59,6 +33,18 @@ Run the client
 npm start
 ```
 
-### Open the Client (Instant)
+## Edit server address
+
+### Open `src/App.js`
+
+Then go ahead to `Line 14` and change the `serverAddress` value to your server address \
+
+```javascript
+const [serverAddress] = useState(
+  "https://chatbot-server-ayang.herokuapp.com/" //change this line
+);
+```
+
+## Deployed web
 
 If you don't want to run on development environment, just open the deployed apps at [https://project-fanisa.web.app](https://project-fanisa.web.app)
