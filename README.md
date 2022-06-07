@@ -37,7 +37,7 @@ npm start
 
 ### Open `src/App.js`
 
-Then go ahead to `Line 14` and change the `serverAddress` value to your server address \
+Then go ahead to `Line 14` and change the `serverAddress` value to your server address
 
 ```javascript
 const [serverAddress] = useState(
