@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { InputGroup, Button, FormControl, Badge } from "react-bootstrap";
 import Chats from "./Chats";
 import "./Chatbot.css";
@@ -13,6 +13,15 @@ function Chatbot() {
   const [serverAddress] = useState(
     "https://chatbot-server-ayang.herokuapp.com/"
   );
+
+  const closeRef = useRef(null);
+
+  useEffect(() => {
+    if (show) {
+      closeRef.current.click();
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     testConnection();
@@ -83,8 +92,9 @@ function Chatbot() {
           </h5>
           <div
             className="close-button"
-            onClick={(e) => setShow(!show)}
+            onClick={(e) => setShow(false)}
             bg="danger"
+            ref={closeRef}
           >
             <box-icon name="x" color="#ffffff"></box-icon>
           </div>{" "}
@@ -122,7 +132,7 @@ function Chatbot() {
     return (
       <div className="toggle-button">
         <box-icon
-          onClick={(e) => setShow(!show)}
+          onClick={(e) => setShow(true)}
           type="logo"
           name="messenger"
           size="lg"
